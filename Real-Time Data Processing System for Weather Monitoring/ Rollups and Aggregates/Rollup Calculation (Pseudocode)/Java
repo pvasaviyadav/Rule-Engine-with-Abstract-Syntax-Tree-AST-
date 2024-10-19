@@ -1,0 +1,14 @@
+double sumTemp = 0;
+double maxTemp = Double.MIN_VALUE;
+double minTemp = Double.MAX_VALUE;
+Map<String, Integer> conditionFrequency = new HashMap<>();
+
+for (WeatherData data : dailyWeatherData) {
+    sumTemp += data.temp;
+    maxTemp = Math.max(maxTemp, data.temp);
+    minTemp = Math.min(minTemp, data.temp);
+    conditionFrequency.put(data.main, conditionFrequency.getOrDefault(data.main, 0) + 1);
+}
+
+double avgTemp = sumTemp / dailyWeatherData.size();
+String dominantCondition = findMostFrequentCondition(conditionFrequency);
