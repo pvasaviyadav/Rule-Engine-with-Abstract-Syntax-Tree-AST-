@@ -1,0 +1,15 @@
+public class Node {
+    String type;        // "operator" or "operand"
+    Node left;          // Left child node
+    Node right;         // Right child node
+    String value;       // For operands like "age", "salary", etc.
+
+    public Node(String type, String value, Node left, Node right) {
+        this.type = type;
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+
+    // Additional methods like addNode, evaluateNode, etc.
+}
