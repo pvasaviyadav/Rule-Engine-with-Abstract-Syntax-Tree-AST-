@@ -1,0 +1,21 @@
+@RestController
+public class RuleEngineController {
+
+    @PostMapping("/create_rule")
+    public Node createRule(@RequestBody String ruleString) {
+        // Implement parsing of ruleString into an AST (Node)
+        return parseRuleString(ruleString);
+    }
+
+    @PostMapping("/combine_rules")
+    public Node combineRules(@RequestBody List<String> rules) {
+        // Implement combining of multiple ASTs
+        return combineRuleASTs(rules);
+    }
+
+    @PostMapping("/evaluate_rule")
+    public boolean evaluateRule(@RequestBody Map<String, Object> data, @RequestBody Node ast) {
+        // Implement rule evaluation based on the AST
+        return evaluateAST(ast, data);
+    }
+}
