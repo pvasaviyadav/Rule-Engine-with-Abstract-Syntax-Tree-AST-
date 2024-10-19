@@ -1,0 +1,5 @@
+CREATE TABLE rules (
+    id SERIAL PRIMARY KEY,
+    rule_name VARCHAR(255),
+    rule_ast JSONB  -- JSONB field to store the serialized AST
+);
