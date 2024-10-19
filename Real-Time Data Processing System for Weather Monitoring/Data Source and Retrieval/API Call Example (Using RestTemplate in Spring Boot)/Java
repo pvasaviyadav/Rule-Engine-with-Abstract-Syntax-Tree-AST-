@@ -1,0 +1,4 @@
+String url = "http://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=YOUR_API_KEY";
+RestTemplate restTemplate = new RestTemplate();
+ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+// Parse JSON response and convert temperature
